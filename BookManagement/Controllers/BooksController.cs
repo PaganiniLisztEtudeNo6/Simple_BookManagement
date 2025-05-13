@@ -65,10 +65,10 @@ namespace BookManagement.Controllers
             ViewBag.TotalPages = totalPages;
             ViewBag.TotalBooks = totalBooks;
             ViewBag.PageSize = pageSize;
-            ViewBag.Title = title; // ส่งค่าค้นหาจาก title
-            ViewBag.Author = author; // ส่งค่าค้นหาจาก author
-            ViewBag.YearFrom = yearFrom; // ส่งค่าค้นหาจาก yearFrom
-            ViewBag.YearTo = yearTo; // ส่งค่าค้นหาจาก yearTo
+            ViewBag.Title = title;
+            ViewBag.Author = author;
+            ViewBag.YearFrom = yearFrom;
+            ViewBag.YearTo = yearTo;
 
             return View();
         }
