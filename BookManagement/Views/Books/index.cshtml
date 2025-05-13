@@ -58,12 +58,10 @@
         </table>
     </div>
 
-    <!-- ข้อมูลการแบ่งหน้า -->
     <div>
         <span>แสดงจาก @((currentPage - 1) * pageSize + 1) ถึง @Math.Min(currentPage * pageSize, totalBooks) ของ @totalBooks รายการ</span>
     </div>
 
-    <!-- การเลือกหน้า (แสดง 5 หน้าในแต่ละครั้ง) -->
     <div style="margin-top: 20px;">
         @for (var i = startPage; i <= endPage; i++)
         {
@@ -73,7 +71,6 @@
         }
     </div>
 
-    <!-- ตัวเลือกการแสดงรายการต่อหน้า -->
     <div class="form-group" style="margin-top: 20px;">
         <label for="pageSize">แสดงรายการต่อหน้า:</label>
         <select id="pageSize" name="pageSize" onchange="location = this.value;">
