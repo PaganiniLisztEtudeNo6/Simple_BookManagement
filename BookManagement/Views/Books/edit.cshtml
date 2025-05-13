@@ -1,0 +1,36 @@
+﻿@model BookManagement.Models.Book
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <div style="max-width: 600px; width: 100%; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center; font-size: 2em; color: #333;">แก้ไขหนังสือ</h1>
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" name="Id" value="@Model.Id" />
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label asp-for="Title" class="control-label" style="font-weight: bold; color: #555;">ชื่อหนังสือ</label>
+                <input type="text" name="Title" value="@Model.Title" style="width: 100%; padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label asp-for="Author" class="control-label" style="font-weight: bold; color: #555;">ผู้เขียน</label>
+                <input type="text" name="Author" value="@Model.Author" style="width: 100%; padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label asp-for="YearPublished" class="control-label" style="font-weight: bold; color: #555;">ปีที่เผยแพร่</label>
+                <input type="number" name="YearPublished" value="@Model.YearPublished" style="width: 100%; padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 5px;" />
+            </div>
+
+            <div class="form-group" style="text-align: center;">
+                <button type="submit" class="btn btn-primary" style="padding: 10px 20px; background-color: #3498db; color: white; border-radius: 5px; border: none; cursor: pointer;">บันทึกการเปลี่ยนแปลง</button>
+                <a href="@Url.Action("Index", "Books")" class="btn btn-secondary" style="padding: 10px 20px; background-color: #95a5a6; color: white; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;">กลับ</a>
+            </div>
+        </form>
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+    </div>
+</div>
